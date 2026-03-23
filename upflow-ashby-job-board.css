@@ -146,6 +146,7 @@
 }
 
 .ashby-job-posting-brief:hover {
+  background: #fff;
   box-shadow: var(--shadow-medium);
   transform: translateY(-1px);
 }
