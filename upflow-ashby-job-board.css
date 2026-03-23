@@ -138,9 +138,11 @@
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
+  border:red;
   border-radius: var(--radius);
   padding: 16px;
   margin-bottom: 12px;
+  transition: box-shadow 180ms ease-out, transform 180ms ease-out;
 }
 
 .ashby-job-posting-brief:hover {
