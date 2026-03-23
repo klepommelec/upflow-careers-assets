@@ -299,6 +299,7 @@
 .ashby-job-posting-brief-department-heading-level * {
   font-family: var(--fontFamily) !important;
   font-size: 13px !important;
+  padding-top: 8px;
   line-height: 18px !important;
   font-weight: 500 !important;
   letter-spacing: 0 !important;
