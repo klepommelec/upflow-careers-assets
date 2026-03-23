@@ -146,7 +146,6 @@
 }
 
 .ashby-job-posting-brief:hover {
-  border-color: rgba(11, 37, 75, 0.16); /* ou rgba(38,127,253,0.35) pour accent bleu */
   box-shadow: var(--shadow-medium);
   transform: translateY(-1px);
 }
