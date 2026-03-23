@@ -102,7 +102,6 @@
   color: var(--c-secondary);
   box-shadow: var(--shadow-light);
   font-family: var(--fontFamily);
-  font-size: 13px;
   line-height: 20px;
   transition: box-shadow 180ms ease-out, background-color 180ms ease-out;
 }
