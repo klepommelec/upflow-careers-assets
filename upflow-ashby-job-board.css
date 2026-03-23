@@ -271,6 +271,7 @@
   font-weight: 500;
   color: rgba(11, 37, 75, 0.5); /* secondaire atténué */
   letter-spacing: 0;
+  padding-left: 12px;
 }
 
 /* Si Ashby utilise un niveau imbriqué */
@@ -285,17 +286,4 @@
 /* Alignement horizontal des labels de section avec les job titles */
 :root {
   --jobs-text-offset-x: 10px; /* ajuste entre 8px et 12px selon rendu */
-}
-
-.ashby-department-heading,
-.ashby-job-posting-brief-department-heading,
-.ashby-department-heading-level,
-.ashby-job-posting-brief-department-heading-level {
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 500;
-  color: rgba(11, 37, 75, 0.5);
-  padding-left: 12px;
-  padding-left: 0;
-  text-indent: 0;
 }
