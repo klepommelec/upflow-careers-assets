@@ -261,3 +261,24 @@
     padding: 12px;
   }
 }
+
+/* Section labels (Business, Product & Engineering) */
+.ashby-department-heading,
+.ashby-job-posting-brief-department-heading {
+  font-family: var(--fontFamily);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba(11, 37, 75, 0.5); /* secondaire atténué */
+  letter-spacing: 0;
+  margin: 20px 0 8px;
+}
+
+/* Si Ashby utilise un niveau imbriqué */
+.ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading-level {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba(11, 37, 75, 0.5);
+}
