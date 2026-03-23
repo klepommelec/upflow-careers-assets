@@ -285,3 +285,15 @@
 .ashby-job-board-filter [data-placeholder='false'] {
   font-weight: 500 !important;
 }
+
+.ashby-job-board-filters-label,
+.ashby-department-heading,
+.ashby-job-posting-brief-department-heading,
+.ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading-level {
+  font-family: var(--fontFamily);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba(11, 37, 75, 0.5);
+}
