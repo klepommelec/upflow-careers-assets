@@ -138,12 +138,8 @@
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
-  border-t:solid;
-  border-b:solid;
-  border-l:solid;
-  border-r:solid; 
   border-radius: var(--radius);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
   padding: 16px;
   margin-bottom: 12px;
   transition: box-shadow 180ms ease-out, transform 180ms ease-out;
