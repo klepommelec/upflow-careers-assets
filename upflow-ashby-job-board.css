@@ -191,18 +191,19 @@
 
 /* primary button */
 .ashby-application-form-submit-button {
-  background: var(--colorPrimary600);
+  background: var(--colorPrimary900);
   color: #fff;
-  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12);
+  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 2px 4px -2px var(--c-secondary-12);
 }
 
 .ashby-application-form-submit-button:hover {
+  background: var(--colorPrimary900);
   box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08);
 }
 
 .ashby-application-form-submit-button:focus {
   outline: none;
-  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 0 0 3px rgba(38, 127, 253, 0.2), 0 2px 4px -2px var(--c-secondary-12);
+  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 0 0 3px rgba(38, 127, 253, 0.2), 0 2px 4px -2px var(--c-secondary-12);
 }
 
 /* secondary button */
