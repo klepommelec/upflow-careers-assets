@@ -84,8 +84,8 @@
 .ashby-job-posting-brief-title,
 .ashby-application-form-question-title,
 .ashby-application-form-section-header-title {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 28px;
   font-weight: 600;
   color: var(--c-secondary);
 }
