@@ -138,6 +138,7 @@
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
+  border:solid;
   border-radius: var(--radius);
   box-shadow: var(--shadow-light);
   padding: 16px;
@@ -151,7 +152,7 @@
 }
 
 .ashby-job-posting-brief-list {
-  gap: 120px;
+  gap: 12px;
 }
 
 /* =========================
