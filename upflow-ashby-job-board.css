@@ -283,7 +283,6 @@
   color: rgba(11, 37, 75, 0.5);
 }
 
-/* Alignement horizontal des labels de section avec les job titles */
-:root {
-  --jobs-text-offset-x: 10px; /* ajuste entre 8px et 12px selon rendu */
+.ashby-job-board-filter [data-placeholder='false'] {
+  font-weight: 500 !important;
 }
