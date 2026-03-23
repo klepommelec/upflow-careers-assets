@@ -197,7 +197,6 @@
 }
 
 .ashby-application-form-submit-button:hover {
-  background: var(--colorPrimary900);
   box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08);
 }
 
