@@ -292,7 +292,7 @@
 .ashby-job-posting-brief-department-heading,
 .ashby-department-heading-level,
 .ashby-job-posting-brief-department-heading-level {
-  margin: 0px 0 8px;
+  margin: 0px 0 0px;
   padding-left: var(--jobs-text-offset-x);
   font-size: 12px;
   line-height: 18px;
