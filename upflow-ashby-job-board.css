@@ -214,8 +214,6 @@
 }
 
 .ashby-job-board-back-to-all-jobs-button:hover {
-  background: #fff;
-  color: var(--c-secondary);
   box-shadow: var(--shadow-medium);
 }
 
