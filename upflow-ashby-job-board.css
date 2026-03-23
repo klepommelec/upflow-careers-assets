@@ -296,4 +296,7 @@
   line-height: 18px;
   font-weight: 500;
   color: rgba(11, 37, 75, 0.5);
+   margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
 }
