@@ -140,7 +140,7 @@
   background: #fff;
   border-radius: var(--radius);
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   transition: box-shadow 180ms ease-out, transform 180ms ease-out, border-color 180ms ease-out;
 }
 
