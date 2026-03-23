@@ -138,7 +138,8 @@
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
-  border:red;
+  border-style:solid;
+  border-color:red;
   border-radius: var(--radius);
   padding: 16px;
   margin-bottom: 12px;
