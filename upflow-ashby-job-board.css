@@ -1,4 +1,4 @@
-/* upflow-ashby-job-board.css - v2 app-like dense */
+/* upflow-ashby-job-board.css - final */
 
 /* =========================
    Tokens proches upflow-app
@@ -10,7 +10,6 @@
 
   --fontFamily: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --widthMaxJobBoard: 1100px;
-
   --radius: 4px;
 
   --c-secondary: #0b254b;
@@ -21,9 +20,7 @@
   --c-secondary-08: rgba(11, 37, 75, 0.08);
   --c-secondary-06: rgba(11, 37, 75, 0.06);
   --c-secondary-03: rgba(11, 37, 75, 0.03);
-  --c-neutral: #f3f5f8;
 
-  /* shadows inspired by frontend/src/styles/js/shadows.ts */
   --shadow-light: 0 0 0 1px var(--c-secondary-08), 0 2px 4px -2px var(--c-secondary-12);
   --shadow-medium: 0 0 0 1px var(--c-secondary-08), 0 5px 7px -2px var(--c-secondary-08);
   --shadow-focused: 0 0 0 3px var(--c-secondary-06), 0 0 0 1px var(--c-secondary-24), 0 2px 4px -2px var(--c-secondary-12);
@@ -41,6 +38,8 @@
 .ashby-job-posting-brief-details,
 .ashby-job-posting-brief-department-heading,
 .ashby-job-posting-brief-department-heading-level,
+.ashby-department-heading,
+.ashby-department-heading-level,
 .ashby-application-form-question-title,
 .ashby-application-form-question-description,
 .ashby-application-form-section-header-title,
@@ -49,21 +48,6 @@
 .ashby-job-posting-right-pane-application-tab {
   font-family: var(--fontFamily);
   color: var(--c-secondary);
-}
-
-/* base app size */
-.ashby-job-board-filters-label,
-.ashby-job-board-reset-filters-label,
-.ashby-job-posting-brief-details,
-.ashby-job-posting-brief-department-heading,
-.ashby-job-posting-brief-department-heading-level,
-.ashby-application-form-question-description,
-.ashby-application-form-section-header-description,
-.ashby-job-posting-right-pane-overview-tab,
-.ashby-job-posting-right-pane-application-tab {
-  font-size: 13px;
-  line-height: 20px;
-  color: var(--c-secondary-70);
 }
 
 .ashby-job-board-heading {
@@ -80,7 +64,23 @@
   color: var(--c-secondary-70);
 }
 
-.ashby-job-posting-heading,
+/* Base texte secondaire */
+.ashby-job-board-filters-label,
+.ashby-job-board-reset-filters-label,
+.ashby-job-posting-brief-details,
+.ashby-job-posting-brief-department-heading,
+.ashby-job-posting-brief-department-heading-level,
+.ashby-department-heading,
+.ashby-department-heading-level,
+.ashby-application-form-question-description,
+.ashby-application-form-section-header-description,
+.ashby-job-posting-right-pane-overview-tab,
+.ashby-job-posting-right-pane-application-tab {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--c-secondary-70);
+}
+
 .ashby-job-posting-brief-title,
 .ashby-application-form-question-title,
 .ashby-application-form-section-header-title {
@@ -91,7 +91,7 @@
 }
 
 /* =========================
-   Filtres / champs (input style)
+   Filtres / champs
    ========================= */
 .ashby-job-board-filter,
 .ashby-application-form-field-entry input,
@@ -133,20 +133,32 @@
   box-shadow: var(--shadow-focused);
 }
 
+/* Évite le jump de taille dans les filtres */
+.ashby-job-board-filter,
+.ashby-job-board-filter * {
+  font-size: 13px !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
+}
+
+.ashby-job-board-filter [data-placeholder='false'] {
+  font-weight: 500 !important;
+}
+
 /* =========================
-   Cards offres (CardButton feel)
+   Cards offres
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
   border-radius: var(--radius);
   padding: 16px;
   margin-bottom: 8px;
-  transition: box-shadow 180ms ease-out, transform 180ms ease-out, border-color 180ms ease-out;
+  box-shadow: inset 0 0 0 1px var(--c-secondary-08);
+  transition: box-shadow 180ms ease-out, transform 180ms ease-out;
 }
 
 .ashby-job-posting-brief:hover {
-  background: #fff;
-  box-shadow: var(--shadow-light);
+  box-shadow: inset 0 0 0 1px rgba(11, 37, 75, 0.16), var(--shadow-light);
   transform: translateY(-1px);
 }
 
@@ -159,8 +171,19 @@
    ========================= */
 .ashby-job-posting-header {
   border-bottom: 1px solid var(--c-secondary-08);
+  padding-top: 12px !important;
   padding-bottom: 12px;
   margin-bottom: 16px;
+}
+
+.ashby-job-posting-header .ashby-job-posting-heading,
+.ashby-job-posting-header h1 {
+  font-family: var(--fontFamily) !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
 }
 
 .ashby-job-posting-left-pane,
@@ -175,7 +198,7 @@
 }
 
 /* =========================
-   Boutons (UpflowButton-like)
+   Boutons
    ========================= */
 .ashby-application-form-submit-button,
 .ashby-job-board-back-to-all-jobs-button {
@@ -189,7 +212,6 @@
   transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out;
 }
 
-/* primary button */
 .ashby-application-form-submit-button {
   background: var(--colorPrimary900);
   color: #fff;
@@ -206,11 +228,11 @@
   box-shadow: 0 0 0 1px var(--colorPrimary900), 0 0 0 3px rgba(38, 127, 253, 0.2), 0 2px 4px -2px var(--c-secondary-12);
 }
 
-/* secondary button */
 .ashby-job-board-back-to-all-jobs-button {
   background: #fff;
   color: var(--c-secondary);
   box-shadow: var(--shadow-light);
+  margin-bottom: 10px !important;
 }
 
 .ashby-job-board-back-to-all-jobs-button:hover {
@@ -239,6 +261,22 @@
 }
 
 /* =========================
+   Uniformiser labels ("Filters:" + sections)
+   ========================= */
+.ashby-job-board-filters-label,
+.ashby-department-heading,
+.ashby-job-posting-brief-department-heading,
+.ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading-level {
+  font-family: var(--fontFamily) !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  color: rgba(11, 37, 75, 0.5) !important;
+}
+
+/* =========================
    Mobile
    ========================= */
 @media (max-width: 900px) {
@@ -251,71 +289,14 @@
     line-height: 24px;
   }
 
-  .ashby-job-posting-heading,
+  .ashby-job-posting-header .ashby-job-posting-heading,
+  .ashby-job-posting-header h1,
   .ashby-job-posting-brief-title {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 16px !important;
+    line-height: 24px !important;
   }
 
   .ashby-job-posting-brief {
     padding: 12px;
   }
-}
-
-/* Section labels (Business, Product & Engineering) */
-.ashby-department-heading,
-.ashby-job-posting-brief-department-heading {
-  font-family: var(--fontFamily);
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 500;
-  color: rgba(11, 37, 75, 0.5); /* secondaire atténué */
-  letter-spacing: 0;
-}
-
-/* Si Ashby utilise un niveau imbriqué */
-.ashby-department-heading-level,
-.ashby-job-posting-brief-department-heading-level {
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 500;
-  color: rgba(11, 37, 75, 0.5);
-}
-
-.ashby-job-board-filter [data-placeholder='false'] {
-  font-weight: 500 !important;
-}
-
-/* Même style exact pour "Filters:" + "Business/Product & Engineering" */
-.ashby-job-board-filters-label,
-.ashby-job-board-filters-label *,
-.ashby-department-heading,
-.ashby-department-heading *,
-.ashby-job-posting-brief-department-heading,
-.ashby-job-posting-brief-department-heading *,
-.ashby-department-heading-level,
-.ashby-department-heading-level *,
-.ashby-job-posting-brief-department-heading-level,
-.ashby-job-posting-brief-department-heading-level * {
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  padding-top: 8px;
-  line-height: 18px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0 !important;
-  color: rgba(11, 37, 75, 0.5) !important;
-}
-
-/* Détail offre: titre plus respirant + taille 20px */
-.ashby-job-posting-heading {
-  font-size: 20px !important;
-  line-height: 28px !important;
-  font-weight: 600;
-  margin-top: 8px !important;
-  margin-bottom: 12px !important;
-}
-
-/* Optionnel: donne un peu d'air au header complet */
-.ashby-job-posting-header {
-  padding-top: 8px !important;
 }
