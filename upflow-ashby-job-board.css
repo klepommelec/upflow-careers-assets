@@ -301,25 +301,8 @@
   }
 }
 
-/* 4 filtres sur une seule ligne */
 .ashby-job-board-filters {
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   gap: 12px !important;
-  align-items: center;
-}
-/* Évite qu'un item casse la grille */
-.ashby-job-board-filters > * {
-  min-width: 0;
-}
-/* Mobile/tablette: on repasse en 2 puis 1 colonne */
-@media (max-width: 1024px) {
-  .ashby-job-board-filters {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-@media (max-width: 640px) {
-  .ashby-job-board-filters {
-    grid-template-columns: 1fr !important;
-  }
 }
