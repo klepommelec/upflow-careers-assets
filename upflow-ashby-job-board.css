@@ -306,3 +306,24 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   gap: 12px !important;
 }
+
+/* Filters layout desktop/tablet/mobile */
+.ashby-job-board-filters {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: center;
+}
+.ashby-job-board-filters > * {
+  min-width: 0 !important;
+}
+@media (max-width: 1024px) {
+  .ashby-job-board-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .ashby-job-board-filters {
+    grid-template-columns: 1fr !important;
+  }
+}
