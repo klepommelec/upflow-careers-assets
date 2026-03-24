@@ -305,3 +305,17 @@
   letter-spacing: 0 !important;
   color: rgba(11, 37, 75, 0.5) !important;
 }
+
+/* Détail offre: titre plus respirant + taille 20px */
+.ashby-job-posting-heading {
+  font-size: 20px !important;
+  line-height: 28px !important;
+  font-weight: 600;
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Optionnel: donne un peu d'air au header complet */
+.ashby-job-posting-header {
+  padding-top: 8px !important;
+}
