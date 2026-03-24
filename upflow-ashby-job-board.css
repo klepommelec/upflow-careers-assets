@@ -301,3 +301,9 @@
     padding: 12px;
   }
 }
+
+/* Détail: plus d'espace entre titre et tabs */
+.ashby-job-posting-header .ashby-job-posting-heading,
+.ashby-job-posting-header h1 {
+  margin-bottom: 18px !important; /* teste 16-20 selon préférence */
+}
