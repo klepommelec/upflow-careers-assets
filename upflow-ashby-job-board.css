@@ -201,7 +201,7 @@
 .ashby-job-board-back-to-all-jobs-button:active,
 .ashby-job-board-back-to-all-jobs-button:focus {
   height: 36px;
-  background: var(--color-secondary-03) !important;
+  background: #ffffff !important;
   color: var(--c-secondary) !important;
   border: 0 !important;
   box-shadow: var(--shadow-medium) !important;
