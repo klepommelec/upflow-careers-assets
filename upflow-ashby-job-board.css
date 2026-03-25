@@ -51,8 +51,8 @@
 }
 
 .ashby-job-board-heading {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -82,12 +82,18 @@
 }
 
 .ashby-job-posting-brief-title,
-.ashby-job-posting-heading,
+.ashby-job-posting-heading {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
 .ashby-application-form-question-title,
 .ashby-application-form-section-header-title {
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--c-secondary-70);
 }
 
 /* =========================
