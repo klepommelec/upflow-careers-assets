@@ -1,4 +1,4 @@
-/* upflow-ashby-job-board.css - clean consolidated */
+/* upflow-ashby-job-board.css - clean rewrite */
 
 :root {
   --colorPrimary900: #1f69d1;
@@ -60,7 +60,6 @@
   color: var(--c-secondary-70);
 }
 
-/* Small/secondary labels */
 .ashby-job-board-filters-label,
 .ashby-job-board-reset-filters-label,
 .ashby-job-posting-brief-details,
@@ -78,7 +77,6 @@
   color: var(--c-secondary-70);
 }
 
-/* Main titles */
 .ashby-job-posting-brief-title,
 .ashby-job-posting-heading,
 .ashby-application-form-question-title,
@@ -89,31 +87,34 @@
 }
 
 /* =========================
-   Filters layout + fields
+   Filters layout
    ========================= */
 .ashby-job-board-filters {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 12px !important;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
   align-items: center;
 }
 
 .ashby-job-board-filters > * {
-  min-width: 0 !important;
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
   .ashby-job-board-filters {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
   .ashby-job-board-filters {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 }
 
+/* =========================
+   Inputs / fields
+   ========================= */
 .ashby-job-board-filter,
 .ashby-application-form-field-entry input,
 .ashby-application-form-field-entry textarea,
@@ -139,26 +140,24 @@
   padding: 8px 12px;
 }
 
-/* Avoid filter text jumping */
 .ashby-job-board-filter,
 .ashby-job-board-filter * {
-  font-size: 13px !important;
-  line-height: 20px !important;
-  letter-spacing: 0 !important;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0;
 }
 
-/* Focus in primary color */
 .ashby-application-form-field-entry input:focus,
 .ashby-application-form-field-entry textarea:focus,
 .ashby-application-form-field-entry select:focus {
-  outline: none !important;
+  outline: none;
   box-shadow:
-    0 0 0 1px var(--colorPrimary600) !important,
-    0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+    0 0 0 1px var(--colorPrimary600),
+    0 0 0 3px rgba(38, 127, 253, 0.16);
 }
 
 /* =========================
-   Job cards
+   Job list cards
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
@@ -178,79 +177,77 @@
    ========================= */
 .ashby-job-posting-header {
   border-bottom: 1px solid var(--c-secondary-08);
-  padding-top: 12px !important;
+  padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 24px;
 }
 
 .ashby-job-posting-header .ashby-job-posting-heading,
 .ashby-job-posting-header h1 {
-  font-size: 24px !important;
-  line-height: 32px !important;
-  font-weight: 600 !important;
-  margin-top: 16px !important;
-  padding-top: 12px !important;
-  margin-bottom: 16px !important;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-top: 16px;
+  padding-top: 12px;
+  margin-bottom: 16px;
 }
 
-/* Tabs text default/active */
+/* tabs text default */
 #job-overview .ashby-job-posting-right-pane-overview-tab,
 #job-application-form .ashby-job-posting-right-pane-application-tab {
-  color: var(--c-secondary-70) !important;
+  color: var(--c-secondary-70);
 }
 
+/* tabs active text */
 #job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
 #job-application-form[aria-selected="true"] .ashby-job-posting-right-pane-application-tab {
-  color: var(--colorPrimary600) !important;
+  color: var(--colorPrimary600);
 }
 
-/* Active underline */
+/* active slider */
 .ashby-job-posting-right-pane-tab-slider {
-  background: var(--colorPrimary600) !important;
+  background: var(--colorPrimary600);
 }
 
 /* =========================
    Buttons
    ========================= */
 
-/* Back "All Jobs" */
+/* Back all jobs */
 .ashby-job-board-back-to-all-jobs-button,
 .ashby-job-board-back-to-all-jobs-button:visited {
   height: 36px;
-  background: #ffffff !important;
-  color: var(--c-secondary) !important;
-  border: 0 !important;
-  border-radius: var(--btnRadius) !important;
-  box-shadow: var(--shadow-light) !important;
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
+  background: #fff;
+  color: var(--c-secondary);
+  border: 0;
+  border-radius: var(--btnRadius);
+  box-shadow: var(--shadow-light);
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out;
 }
 
 .ashby-job-board-back-to-all-jobs-button:hover,
 .ashby-job-board-back-to-all-jobs-button:active,
 .ashby-job-board-back-to-all-jobs-button:focus {
-  background: #ffffff !important;
-  color: var(--c-secondary) !important;
-  border: 0 !important;
-  box-shadow: var(--shadow-medium) !important;
+  background: #fff;
+  color: var(--c-secondary);
+  box-shadow: var(--shadow-medium);
 }
 
 .ashby-job-board-back-to-all-jobs-button svg,
 .ashby-job-board-back-to-all-jobs-button svg * {
-  fill: var(--c-secondary) !important;
-  stroke: var(--c-secondary) !important;
-  color: var(--c-secondary) !important;
+  fill: var(--c-secondary);
+  stroke: var(--c-secondary);
+  color: var(--c-secondary);
 }
 
-/* Primary CTA exact selectors you provided */
+/* Primary buttons (selectors validés dans ton DOM) */
 #overview > a > button,
 #form > button {
-  background: var(--colorPrimary600) !important;
-  background-color: var(--colorPrimary600) !important;
-  border: 0 !important;
-  border-color: var(--colorPrimary600) !important;
-  border-radius: var(--btnRadius) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12) !important;
+  background: var(--colorPrimary600);
+  color: #fff;
+  border: 1px solid var(--colorPrimary600);
+  border-radius: var(--btnRadius);
+  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12);
 }
 
 #overview > a > button:hover,
@@ -259,57 +256,54 @@
 #form > button:hover,
 #form > button:active,
 #form > button:focus {
-  background: var(--colorPrimary600) !important;
-  background-color: var(--colorPrimary600) !important;
-  color: #ffffff !important;
+  background: var(--colorPrimary600);
+  color: #fff;
+  border-color: var(--colorPrimary600);
 }
 
-/* Upload / secondary buttons */
+/* Secondary buttons (Upload file) */
 button[class*="_secondary_"],
 a[class*="_secondary_"] {
-  background: #ffffff !important;
-  color: var(--c-secondary) !important;
-  border: 0 !important;
-  border-radius: var(--btnRadius) !important;
-  box-shadow: var(--shadow-light) !important;
+  background: #fff;
+  color: var(--c-secondary);
+  border: 0;
+  border-radius: var(--btnRadius);
+  box-shadow: var(--shadow-light);
 }
 
 button[class*="_secondary_"]:hover,
 a[class*="_secondary_"]:hover {
-  background: var(--c-secondary-03) !important;
-  color: var(--c-secondary) !important;
-  box-shadow: var(--shadow-medium) !important;
+  background: var(--c-secondary-03);
+  color: var(--c-secondary);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Keep icon dark on secondary hover */
 button[class*="_secondary_"] svg,
 button[class*="_secondary_"] svg *,
 a[class*="_secondary_"] svg,
 a[class*="_secondary_"] svg * {
-  fill: var(--c-secondary) !important;
-  stroke: var(--c-secondary) !important;
-  color: var(--c-secondary) !important;
+  fill: var(--c-secondary);
+  stroke: var(--c-secondary);
+  color: var(--c-secondary);
 }
 
 /* =========================
    Autofill pane (single gray layer)
    ========================= */
-
-/* Outer wrapper gets the gray background */
 .ashby-application-form-autofill-pane {
-  background: var(--c-secondary-03) !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: var(--radius) !important;
-  padding: 12px !important;
+  background: var(--c-secondary-03);
+  border: none;
+  box-shadow: none;
+  border-radius: var(--radius);
+  padding: 12px;
 }
 
-/* All inner layers transparent to avoid "double gray" */
+/* inner layers transparent */
 .ashby-application-form-autofill-pane .ashby-application-form-autofill-input-root,
 .ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer,
 .ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer > div,
 .ashby-application-form-autofill-pane [class*="_content_"] {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
