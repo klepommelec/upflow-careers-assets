@@ -307,3 +307,21 @@
 .ashby-job-posting-header h1 {
   margin-bottom: 18px !important; /* teste 16-20 selon préférence */
 }
+
+/* Back button - base */
+.ashby-job-board-back-to-all-jobs-button,
+.ashby-job-board-back-to-all-jobs-button:visited {
+  background: #0b254b !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
+}
+/* Hover/active/focus */
+.ashby-job-board-back-to-all-jobs-button:hover,
+.ashby-job-board-back-to-all-jobs-button:active,
+.ashby-job-board-back-to-all-jobs-button:focus {
+  background: #1f69d1 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
+}
