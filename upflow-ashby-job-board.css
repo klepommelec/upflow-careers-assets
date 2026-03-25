@@ -304,8 +304,8 @@
 /* PRIMARY buttons (Apply/Submit) */
 button[class*="_primary_"],
 a[class*="_primary_"]{
-  background-color: #0b254b !important;
-  background: #0b254b !important;
+  background-color: var(--colorPrimary600) !important;
+  background: var(--colorPrimary600) !important;
   color: #ffffff !important;
   border: 0 !important;
   box-shadow: 0 0 0 1px rgba(11,37,75,0.2), 0 2px 4px -2px rgba(11,37,75,0.25) !important;
