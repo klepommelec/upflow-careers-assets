@@ -513,3 +513,9 @@ a[class*="_primary_"]:focus {
 #root > div._container_ud4nd_29 {
   row-gap: 14px !important;
 }
+
+/* Card hover: tout le texte passe en bleu */
+.ashby-job-posting-brief:hover,
+.ashby-job-posting-brief:hover * {
+  color: #267ffd !important;
+}
