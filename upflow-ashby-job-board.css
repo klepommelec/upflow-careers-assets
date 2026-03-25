@@ -449,3 +449,18 @@
 .ashby-application-form-container a[class*="_secondary"]:hover {
   box-shadow: var(--shadow-medium) !important;
 }
+
+/* Ne pas faire virer l'icône en blanc au hover */
+.ashby-job-board-back-to-all-jobs-button svg,
+.ashby-job-board-back-to-all-jobs-button svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
+
+.ashby-job-board-back-to-all-jobs-button:hover svg,
+.ashby-job-board-back-to-all-jobs-button:hover svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
