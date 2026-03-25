@@ -507,3 +507,22 @@ a[class*="_primary_"]:focus {
   border: none !important;
   box-shadow: none !important;
 }
+
+/* 1) Conteneur externe = fond gris */
+.ashby-application-form-autofill-pane {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+  padding: 12px !important; /* optionnel pour l'espace interne */
+}
+
+/* 2) Wrapper root + base + content = transparents */
+.ashby-application-form-autofill-input-root,
+.ashby-application-form-autofill-input-base-layer,
+.ashby-application-form-autofill-input-base-layer > div,
+.ashby-application-form-autofill-input-root > div {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
