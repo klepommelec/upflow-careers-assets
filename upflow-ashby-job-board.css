@@ -10,7 +10,7 @@
   --fontFamily: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --radius: 4px;
 
-  --btnRadius: 10px;
+  --btnRadius: 4px;
 
   --c-secondary: #0b254b;
   --c-secondary-70: rgba(11, 37, 75, 0.7);
@@ -76,6 +76,7 @@
 .ashby-job-posting-right-pane-overview-tab,
 .ashby-job-posting-right-pane-application-tab {
   font-size: 13px;
+  font-weight:500;
   line-height: 20px;
   color: var(--c-secondary-70);
 }
@@ -170,16 +171,16 @@
   border-bottom: 1px solid var(--c-secondary-08);
   padding-top: 12px !important;
   padding-bottom: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .ashby-job-posting-header .ashby-job-posting-heading,
 .ashby-job-posting-header h1 {
-  font-size: 20px !important;
-  line-height: 28px !important;
+  font-size: 24px !important;
+  line-height: 32px !important;
   font-weight: 600 !important;
-  margin-top: 0 !important;
-  margin-bottom: 18px !important;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
 }
 
 /* =========================
@@ -187,6 +188,7 @@
    ========================= */
 .ashby-job-board-back-to-all-jobs-button,
 .ashby-job-board-back-to-all-jobs-button:visited {
+  height: 36px;
   background: #ffffff !important;
   color: var(--c-secondary) !important;
   border: 0 !important;
@@ -195,12 +197,13 @@
   transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
 }
 
-/* Hover back: fond bleu, MAIS icône reste foncée */
 .ashby-job-board-back-to-all-jobs-button:hover,
 .ashby-job-board-back-to-all-jobs-button:active,
 .ashby-job-board-back-to-all-jobs-button:focus {
-  background: var(--colorPrimary900) !important;
-  color: #ffffff !important;
+  height: 36px;
+  background: var(--color-secondary-03) !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
   box-shadow: var(--shadow-medium) !important;
 }
 
