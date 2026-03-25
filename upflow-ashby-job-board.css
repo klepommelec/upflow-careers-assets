@@ -299,3 +299,56 @@
   stroke: var(--c-secondary) !important;
   color: var(--c-secondary) !important;
 }
+
+/* ===== Primary buttons (Apply / Submit) ===== */
+#ashby_embed button[class*="_primary_"],
+#ashby_embed a[class*="_primary_"] {
+  background-color: var(--c-secondary) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  box-shadow: 0 0 0 1px rgba(11,37,75,0.25) !important;
+}
+
+#ashby_embed button[class*="_primary_"]:hover,
+#ashby_embed a[class*="_primary_"]:hover {
+  background-color: var(--colorPrimary900) !important;
+}
+
+/* ===== Secondary buttons (Upload file / autofill) ===== */
+#ashby_embed button[class*="_secondary_"],
+#ashby_embed a[class*="_secondary_"] {
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  box-shadow: var(--shadow-light) !important;
+}
+
+#ashby_embed button[class*="_secondary_"]:hover,
+#ashby_embed a[class*="_secondary_"]:hover {
+  background: var(--c-secondary-03) !important;
+  color: var(--c-secondary) !important;
+}
+
+/* Force l'icon à rester foncée au hover (fix "icon becomes white") */
+#ashby_embed button[class*="_secondary_"]:hover svg,
+#ashby_embed button[class*="_secondary_"]:hover svg *,
+#ashby_embed a[class*="_secondary_"]:hover svg,
+#ashby_embed a[class*="_secondary_"]:hover svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
