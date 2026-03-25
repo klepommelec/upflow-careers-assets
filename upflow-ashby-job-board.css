@@ -252,7 +252,7 @@
   button[class*="_primary_"]:hover,
 .ashby-job-posting-right-pane-application-tab
   a[class*="_primary_"]:hover {
-  background: var(--colorPrimary900) !important;
+  background: var(--colorPrimary600) !important;
   box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
 }
 
