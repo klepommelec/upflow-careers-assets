@@ -525,3 +525,31 @@ a[class*="_primary_"]:focus {
 .ashby-job-posting-brief:hover * {
   color: #267ffd !important;
 }
+
+/* Zone drag & drop fichier (ex. Resume) — dashed plus fin */
+#form .ashby-application-form-field-entry div[role="presentation"][class*="_container_"],
+#form .ashby-application-form-container div[role="presentation"][class*="_container_"] {
+  border-width: 1px !important;        /* souvent 2px par défaut → plus fin */
+  border-style: dashed !important;
+  border-color: var(--c-secondary-12) !important; /* ou #e5e8ec */
+  border-radius: var(--radius);
+}
+
+.ashby-job-board-filter:focus,
+.ashby-job-board-filter:focus-visible {
+  outline: none !important;
+  border: 1px solid #267ffd !important;
+  box-shadow:
+    0 0 0 1px #267ffd,
+    0 0 0 3px rgba(38, 127, 253, 0.2) !important;
+}
+
+/* Si le focus est géré par un parent */
+._filters_1cp2r_136:focus-within .ashby-job-board-filter,
+div[class*="_filters_"]:focus-within select.ashby-job-board-filter {
+  outline: none !important;
+  border: 1px solid #267ffd !important;
+  box-shadow:
+    0 0 0 1px #267ffd,
+    0 0 0 3px rgba(38, 127, 253, 0.2) !important;
+}
