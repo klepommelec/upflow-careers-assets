@@ -525,3 +525,13 @@ a[class*="_primary_"]:focus {
 .ashby-job-posting-brief:hover * {
   color: #267ffd !important;
 }
+
+/* 2) Filter en focus: contour bleu (au lieu noir épais) */
+.ashby-job-board-filter:focus,
+.ashby-job-board-filter:focus-visible,
+.ashby-job-board-filter:focus-within {
+  outline: none !important;
+  box-shadow:
+    0 0 0 1px #267ffd !important,
+    0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
