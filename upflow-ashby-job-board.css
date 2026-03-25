@@ -385,3 +385,25 @@ a[class*="_primary_"]:focus {
   background: var(--colorPrimary600) !important;
   background-color: var(--colorPrimary600) !important;
 }
+
+/* Primary buttons exact selectors */
+#overview > a > button,
+#form > button {
+  background: #267ffd !important;
+  background-color: #267ffd !important;
+  border-color: #267ffd !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px #267ffd, 0 2px 4px -2px rgba(11, 37, 75, 0.12) !important;
+}
+
+#overview > a > button:hover,
+#overview > a > button:active,
+#overview > a > button:focus,
+#form > button:hover,
+#form > button:active,
+#form > button:focus {
+  background: #267ffd !important;
+  background-color: #267ffd !important;
+  border-color: #267ffd !important;
+  color: #ffffff !important;
+}
