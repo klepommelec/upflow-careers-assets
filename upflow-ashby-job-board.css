@@ -407,3 +407,24 @@ a[class*="_primary_"]:focus {
   border-color: #267ffd !important;
   color: #ffffff !important;
 }
+
+/* Tabs text color */
+#job-overview,
+#job-application {
+  color: var(--c-secondary-70) !important;
+}
+
+/* Active tab text color */
+#job-overview[aria-selected="true"],
+#job-application[aria-selected="true"],
+#job-overview[data-state="active"],
+#job-application[data-state="active"],
+#job-overview.active,
+#job-application.active {
+  color: #267ffd !important;
+}
+
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: #267ffd !important;
+}
