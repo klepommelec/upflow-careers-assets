@@ -447,3 +447,26 @@ a[class*="_primary_"]:focus {
 .ashby-job-posting-right-pane-tab-slider {
   background: #267ffd !important;
 }
+
+/* Tabs text default */
+#job-overview .ashby-job-posting-right-pane-overview-tab,
+#job-application-form .ashby-job-posting-right-pane-application-tab {
+  color: var(--c-secondary-70) !important;
+}
+
+/* Active Overview text */
+#job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
+#job-overview[class*="_active_"] .ashby-job-posting-right-pane-overview-tab {
+  color: #267ffd !important;
+}
+
+/* Active Application text */
+#job-application-form[aria-selected="true"] .ashby-job-posting-right-pane-application-tab,
+#job-application-form[class*="_active_"] .ashby-job-posting-right-pane-application-tab {
+  color: #267ffd !important;
+}
+
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: #267ffd !important;
+}
