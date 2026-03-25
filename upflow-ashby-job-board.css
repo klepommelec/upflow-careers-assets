@@ -553,5 +553,5 @@ a[class*="_primary_"]:focus {
 }
 
 .ashby-job-posting-heading {
-   margin-top:24px;
+   margin-top:24px !important;
 }
