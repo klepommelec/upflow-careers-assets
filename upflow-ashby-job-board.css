@@ -228,7 +228,7 @@
   button[class*="_primary_"],
 .ashby-job-posting-right-pane-application-tab
   a[class*="_primary_"] {
-  background: var(--c-secondary) !important;
+  background: var(--colorPrimary600) !important;
   color: #ffffff !important;
   border: 0 !important;
   border-radius: var(--btnRadius) !important;
