@@ -470,3 +470,13 @@ a[class*="_primary_"]:focus {
 .ashby-job-posting-right-pane-tab-slider {
   background: #267ffd !important;
 }
+
+/* Autofill pane: retirer la bordure grise, fond gris clair */
+#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div,
+.ashby-application-form-autofill-input-root,
+.ashby-application-form-autofill-input-base-layer {
+  border: none !important;
+  box-shadow: none !important;
+  background: var(--c-secondary-03) !important;
+  border-radius: var(--radius) !important;
+}
