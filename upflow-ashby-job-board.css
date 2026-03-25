@@ -473,7 +473,7 @@ a[class*="_primary_"]:focus {
 
 /* Autofill: une seule couche de fond gris */
 .ashby-application-form-autofill-pane {
-  background: transparent !important;
+  background: var (--c-secondary-03) !important;
   border: none !important;
   box-shadow: none !important;
 }
