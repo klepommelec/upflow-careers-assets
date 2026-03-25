@@ -1,11 +1,15 @@
-/* upflow-ashby-job-board.css - clean rewrite */
+/* upflow-ashby-job-board.css - simplified & aligned */
 
+/* =========================
+   Tokens
+   ========================= */
 :root {
   --colorPrimary900: #1f69d1;
   --colorPrimary600: #267ffd;
 
   --fontFamily: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --radius: 4px;
+
   --btnRadius: 4px;
 
   --c-secondary: #0b254b;
@@ -23,7 +27,7 @@
 }
 
 /* =========================
-   Typography
+   Typography (base)
    ========================= */
 .ashby-job-board-heading,
 .ashby-job-board-heading-count,
@@ -72,8 +76,8 @@
 .ashby-job-posting-right-pane-overview-tab,
 .ashby-job-posting-right-pane-application-tab {
   font-size: 13px;
+  font-weight:500;
   line-height: 20px;
-  font-weight: 500;
   color: var(--c-secondary-70);
 }
 
@@ -87,34 +91,30 @@
 }
 
 /* =========================
-   Filters layout
+   Filters
    ========================= */
 .ashby-job-board-filters {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
   align-items: center;
 }
 
 .ashby-job-board-filters > * {
-  min-width: 0;
+  min-width: 0 !important;
 }
 
 @media (max-width: 1024px) {
   .ashby-job-board-filters {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
-
 @media (max-width: 640px) {
   .ashby-job-board-filters {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
 
-/* =========================
-   Inputs / fields
-   ========================= */
 .ashby-job-board-filter,
 .ashby-application-form-field-entry input,
 .ashby-application-form-field-entry textarea,
@@ -138,26 +138,19 @@
 .ashby-application-form-field-entry textarea,
 .ashby-application-form-field-entry select {
   padding: 8px 12px;
+  border-radius: var(--radius);
 }
 
+/* évite le "jump" typo au select */
 .ashby-job-board-filter,
 .ashby-job-board-filter * {
-  font-size: 13px;
-  line-height: 20px;
-  letter-spacing: 0;
-}
-
-.ashby-application-form-field-entry input:focus,
-.ashby-application-form-field-entry textarea:focus,
-.ashby-application-form-field-entry select:focus {
-  outline: none;
-  box-shadow:
-    0 0 0 1px var(--colorPrimary600),
-    0 0 0 3px rgba(38, 127, 253, 0.16);
+  font-size: 13px !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
 }
 
 /* =========================
-   Job list cards
+   Cards
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
@@ -173,81 +166,234 @@
 }
 
 /* =========================
-   Detail header + tabs
+   Detail header spacing (tabs)
    ========================= */
 .ashby-job-posting-header {
   border-bottom: 1px solid var(--c-secondary-08);
-  padding-top: 12px;
+  padding-top: 12px !important;
   padding-bottom: 12px;
   margin-bottom: 24px;
 }
 
 .ashby-job-posting-header .ashby-job-posting-heading,
 .ashby-job-posting-header h1 {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
-  margin-top: 16px;
-  padding-top: 12px;
-  margin-bottom: 16px;
-}
-
-/* tabs text default */
-#job-overview .ashby-job-posting-right-pane-overview-tab,
-#job-application-form .ashby-job-posting-right-pane-application-tab {
-  color: var(--c-secondary-70);
-}
-
-/* tabs active text */
-#job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
-#job-application-form[aria-selected="true"] .ashby-job-posting-right-pane-application-tab {
-  color: var(--colorPrimary600);
-}
-
-/* active slider */
-.ashby-job-posting-right-pane-tab-slider {
-  background: var(--colorPrimary600);
+  font-size: 24px !important;
+  line-height: 32px !important;
+  font-weight: 600 !important;
+  margin-top: 16px !important;
+  padding-top: 12px !important;
+  margin-bottom: 16px !important;
 }
 
 /* =========================
-   Buttons
+   Back button (All Jobs)
    ========================= */
-
-/* Back all jobs */
 .ashby-job-board-back-to-all-jobs-button,
 .ashby-job-board-back-to-all-jobs-button:visited {
   height: 36px;
-  background: #fff;
-  color: var(--c-secondary);
-  border: 0;
-  border-radius: var(--btnRadius);
-  box-shadow: var(--shadow-light);
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out;
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+  box-shadow: var(--shadow-light) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
 }
 
 .ashby-job-board-back-to-all-jobs-button:hover,
 .ashby-job-board-back-to-all-jobs-button:active,
 .ashby-job-board-back-to-all-jobs-button:focus {
-  background: #fff;
-  color: var(--c-secondary);
-  box-shadow: var(--shadow-medium);
+  height: 36px;
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  box-shadow: var(--shadow-medium) !important;
 }
 
 .ashby-job-board-back-to-all-jobs-button svg,
 .ashby-job-board-back-to-all-jobs-button svg * {
-  fill: var(--c-secondary);
-  stroke: var(--c-secondary);
-  color: var(--c-secondary);
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
 }
 
-/* Primary buttons (selectors validés dans ton DOM) */
+/* =========================
+   Buttons alignment (simple + robust)
+   Use Ashby hashed classes: _primary_ / _secondary_
+   ========================= */
+
+/* Primary buttons: Apply/Submit => navy background */
+.ashby-job-posting-right-pane-overview-tab
+  button[class*="_primary_"],
+.ashby-job-posting-right-pane-overview-tab
+  a[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_primary_"] {
+  background: var(--colorPrimary600) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 7px 12px !important;
+
+  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
+}
+
+.ashby-job-posting-right-pane-overview-tab
+  button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-overview-tab
+  a[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_primary_"]:hover {
+  background: var(--colorPrimary600) !important;
+  box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
+}
+
+/* Secondary buttons: Upload file (resume + autofill) */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"] {
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 7px 12px !important;
+
+  box-shadow: var(--shadow-light) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+/* Hover: fond gris, ET l’icône reste foncée (pas blanche) */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"]:hover {
+  background: var(--c-secondary-03) !important;
+  box-shadow: var(--shadow-medium) !important;
+  color: var(--c-secondary) !important;
+}
+
+/* Force icon color for secondary buttons (fix "icon becomes white") */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"] svg *,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"] svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
+
+/* PRIMARY buttons (Apply/Submit) */
+button[class*="_primary_"],
+a[class*="_primary_"]{
+  background-color: var(--colorPrimary600) !important;
+  background: var(--colorPrimary600) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  box-shadow: 0 0 0 1px rgba(11,37,75,0.2), 0 2px 4px -2px rgba(11,37,75,0.25) !important;
+  border-radius: var(--radius) !important;
+}
+button[class*="_primary_"]:hover,
+a[class*="_primary_"]:hover{
+  background-color: #1f69d1 !important;
+  background: #1f69d1 !important;
+}
+
+/* SECONDARY buttons (Upload file) */
+button[class*="_secondary_"],
+a[class*="_secondary_"]{
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #0b254b !important; /* important pour garder l’icone foncée */
+  border: 0 !important;
+  box-shadow: var(--shadow-light) !important;
+  border-radius: var(--radius) !important;
+}
+button[class*="_secondary_"]:hover,
+a[class*="_secondary_"]:hover{
+  background-color: rgba(11,37,75,0.03) !important; /* fond gris discret */
+  background: rgba(11,37,75,0.03) !important;
+  color: #0b254b !important; /* force l’icone à rester foncée */
+}
+
+/* Force couleur SVG (fix "icon becomes white") */
+button[class*="_secondary_"] svg,
+a[class*="_secondary_"] svg,
+button[class*="_secondary_"] svg *,
+a[class*="_secondary_"] svg *{
+  fill: #0b254b !important;
+  stroke: #0b254b !important;
+  color: #0b254b !important;
+}
+
+/* Focus input: border/outline en primary */
+.ashby-application-form-field-entry input:focus,
+.ashby-application-form-field-entry textarea:focus,
+.ashby-application-form-field-entry select:focus {
+  outline: none !important;
+  box-shadow:
+    0 0 0 1px var(--colorPrimary600) !important,
+    0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
+
+/* Onglet sélectionné: texte + underline en primary */
+.ashby-job-posting-right-pane-tab-slider {
+  background: var(--colorPrimary600) !important;
+}
+
+/* Optionnel: texte actif en primary (si état exposé) */
+.ashby-job-posting-right-pane-overview-tab[aria-selected='true'],
+.ashby-job-posting-right-pane-application-tab[aria-selected='true'],
+.ashby-job-posting-right-pane-overview-tab[data-state='active'],
+.ashby-job-posting-right-pane-application-tab[data-state='active'] {
+  color: var(--colorPrimary600) !important;
+}
+
+/* Primary buttons background in --colorPrimary600 */
+button[class*="_primary_"],
+a[class*="_primary_"] {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12) !important;
+}
+
+button[class*="_primary_"]:hover,
+a[class*="_primary_"]:hover,
+button[class*="_primary_"]:active,
+a[class*="_primary_"]:active,
+button[class*="_primary_"]:focus,
+a[class*="_primary_"]:focus {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+}
+
+/* Primary buttons exact selectors */
 #overview > a > button,
 #form > button {
-  background: var(--colorPrimary600);
-  color: #fff;
-  border: 1px solid var(--colorPrimary600);
-  border-radius: var(--btnRadius);
-  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12);
+  background: #267ffd !important;
+  background-color: #267ffd !important;
+  border-color: #267ffd !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px #267ffd, 0 2px 4px -2px rgba(11, 37, 75, 0.12) !important;
 }
 
 #overview > a > button:hover,
@@ -256,54 +402,127 @@
 #form > button:hover,
 #form > button:active,
 #form > button:focus {
-  background: var(--colorPrimary600);
-  color: #fff;
-  border-color: var(--colorPrimary600);
+  background: #267ffd !important;
+  background-color: #267ffd !important;
+  border-color: #267ffd !important;
+  color: #ffffff !important;
 }
 
-/* Secondary buttons (Upload file) */
-button[class*="_secondary_"],
-a[class*="_secondary_"] {
-  background: #fff;
-  color: var(--c-secondary);
-  border: 0;
-  border-radius: var(--btnRadius);
-  box-shadow: var(--shadow-light);
+/* Tabs text color */
+#job-overview,
+#job-application {
+  color: var(--c-secondary-70) !important;
 }
 
-button[class*="_secondary_"]:hover,
-a[class*="_secondary_"]:hover {
-  background: var(--c-secondary-03);
-  color: var(--c-secondary);
-  box-shadow: var(--shadow-medium);
+/* Active tab text color */
+#job-overview[aria-selected="true"],
+#job-application[aria-selected="true"],
+#job-overview[data-state="active"],
+#job-application[data-state="active"],
+#job-overview.active,
+#job-application.active {
+  color: #267ffd !important;
 }
 
-button[class*="_secondary_"] svg,
-button[class*="_secondary_"] svg *,
-a[class*="_secondary_"] svg,
-a[class*="_secondary_"] svg * {
-  fill: var(--c-secondary);
-  stroke: var(--c-secondary);
-  color: var(--c-secondary);
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: #267ffd !important;
 }
 
-/* =========================
-   Autofill pane (single gray layer)
-   ========================= */
+/* Tabs text default */
+#job-overview .ashby-job-posting-right-pane-overview-tab,
+#job-application .ashby-job-posting-right-pane-application-tab {
+  color: var(--c-secondary-70) !important;
+}
+
+/* Active tab text */
+#job-overview._active_oj0x8_57 .ashby-job-posting-right-pane-overview-tab,
+#job-application._active_oj0x8_57 .ashby-job-posting-right-pane-application-tab,
+#job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
+#job-application[aria-selected="true"] .ashby-job-posting-right-pane-application-tab {
+  color: #267ffd !important;
+}
+
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: #267ffd !important;
+}
+
+/* Tabs text default */
+#job-overview .ashby-job-posting-right-pane-overview-tab,
+#job-application-form .ashby-job-posting-right-pane-application-tab {
+  color: var(--c-secondary-70) !important;
+}
+
+/* Active Overview text */
+#job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
+#job-overview[class*="_active_"] .ashby-job-posting-right-pane-overview-tab {
+  color: #267ffd !important;
+}
+
+/* Active Application text */
+#job-application-form[aria-selected="true"] .ashby-job-posting-right-pane-application-tab,
+#job-application-form[class*="_active_"] .ashby-job-posting-right-pane-application-tab {
+  color: #267ffd !important;
+}
+
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: #267ffd !important;
+}
+
+/* Autofill: une seule couche de fond gris */
 .ashby-application-form-autofill-pane {
-  background: var(--c-secondary-03);
-  border: none;
-  box-shadow: none;
-  border-radius: var(--radius);
-  padding: 12px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* inner layers transparent */
-.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-root,
-.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer,
-.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer > div,
-.ashby-application-form-autofill-pane [class*="_content_"] {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+/* couche visible unique */
+.ashby-application-form-autofill-input-base-layer {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+}
+
+/* neutraliser les wrappers internes */
+.ashby-application-form-autofill-input-root {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Autofill: supprimer le double fond */
+#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div > div._base_xd2v0_31.ashby-application-form-autofill-input-base-layer {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+}
+
+/* couche interne qui créait le 2e fond */
+#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div > div._base_xd2v0_31.ashby-application-form-autofill-input-base-layer > div._content_xd2v0_36 {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 1) Conteneur externe = fond gris */
+.ashby-application-form-autofill-pane {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+  padding: 12px !important; /* optionnel pour l'espace interne */
+}
+
+/* 2) Wrapper root + base + content = transparents */
+.ashby-application-form-autofill-input-root,
+.ashby-application-form-autofill-input-base-layer,
+.ashby-application-form-autofill-input-base-layer > div,
+.ashby-application-form-autofill-input-root > div {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
