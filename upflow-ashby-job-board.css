@@ -1,16 +1,16 @@
-/* upflow-ashby-job-board.css - cleaned final */
+/* upflow-ashby-job-board.css - simplified & aligned */
 
 /* =========================
-   Tokens proches upflow-app
+   Tokens
    ========================= */
 :root {
   --colorPrimary900: #1f69d1;
   --colorPrimary600: #267ffd;
-  --colorAppBackground: #ffffff;
 
   --fontFamily: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --widthMaxJobBoard: 1100px;
   --radius: 4px;
+
+  --btnRadius: 10px;
 
   --c-secondary: #0b254b;
   --c-secondary-70: rgba(11, 37, 75, 0.7);
@@ -22,11 +22,12 @@
   --c-secondary-03: rgba(11, 37, 75, 0.03);
 
   --shadow-light: 0 0 0 1px var(--c-secondary-08), 0 2px 4px -2px var(--c-secondary-12);
+  --shadow-medium: 0 0 0 1px var(--c-secondary-08), 0 5px 7px -2px var(--c-secondary-08);
   --shadow-focused: 0 0 0 3px var(--c-secondary-06), 0 0 0 1px var(--c-secondary-24), 0 2px 4px -2px var(--c-secondary-12);
 }
 
 /* =========================
-   Typo globale
+   Typography (base)
    ========================= */
 .ashby-job-board-heading,
 .ashby-job-board-heading-count,
@@ -35,10 +36,10 @@
 .ashby-job-posting-heading,
 .ashby-job-posting-brief-title,
 .ashby-job-posting-brief-details,
-.ashby-job-posting-brief-department-heading,
-.ashby-job-posting-brief-department-heading-level,
 .ashby-department-heading,
 .ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading,
+.ashby-job-posting-brief-department-heading-level,
 .ashby-application-form-question-title,
 .ashby-application-form-question-description,
 .ashby-application-form-section-header-title,
@@ -63,14 +64,13 @@
   color: var(--c-secondary-70);
 }
 
-/* Base texte secondaire */
 .ashby-job-board-filters-label,
 .ashby-job-board-reset-filters-label,
 .ashby-job-posting-brief-details,
-.ashby-job-posting-brief-department-heading,
-.ashby-job-posting-brief-department-heading-level,
 .ashby-department-heading,
 .ashby-department-heading-level,
+.ashby-job-posting-brief-department-heading,
+.ashby-job-posting-brief-department-heading-level,
 .ashby-application-form-question-description,
 .ashby-application-form-section-header-description,
 .ashby-job-posting-right-pane-overview-tab,
@@ -81,17 +81,39 @@
 }
 
 .ashby-job-posting-brief-title,
+.ashby-job-posting-heading,
 .ashby-application-form-question-title,
 .ashby-application-form-section-header-title {
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
-  color: var(--c-secondary);
 }
 
 /* =========================
-   Filtres / champs
+   Filters
    ========================= */
+.ashby-job-board-filters {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: center;
+}
+
+.ashby-job-board-filters > * {
+  min-width: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .ashby-job-board-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .ashby-job-board-filters {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .ashby-job-board-filter,
 .ashby-application-form-field-entry input,
 .ashby-application-form-field-entry textarea,
@@ -103,7 +125,7 @@
   box-shadow: var(--shadow-light);
   font-family: var(--fontFamily);
   line-height: 20px;
-  transition: box-shadow 180ms ease-out, background-color 180ms ease-out;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out;
 }
 
 .ashby-job-board-filter {
@@ -117,22 +139,7 @@
   padding: 8px 12px;
 }
 
-.ashby-job-board-filter:hover:not(:focus),
-.ashby-application-form-field-entry input:hover:not(:focus),
-.ashby-application-form-field-entry textarea:hover:not(:focus),
-.ashby-application-form-field-entry select:hover:not(:focus) {
-  background: var(--c-secondary-03);
-}
-
-.ashby-job-board-filter:focus,
-.ashby-application-form-field-entry input:focus,
-.ashby-application-form-field-entry textarea:focus,
-.ashby-application-form-field-entry select:focus {
-  outline: none;
-  box-shadow: var(--shadow-focused);
-}
-
-/* Évite le jump de taille dans les filtres */
+/* évite le "jump" typo au select */
 .ashby-job-board-filter,
 .ashby-job-board-filter * {
   font-size: 13px !important;
@@ -140,12 +147,8 @@
   letter-spacing: 0 !important;
 }
 
-.ashby-job-board-filter [data-placeholder='false'] {
-  font-weight: 500 !important;
-}
-
 /* =========================
-   Cards offres
+   Cards
    ========================= */
 .ashby-job-posting-brief {
   background: #fff;
@@ -156,19 +159,12 @@
   transition: background-color 180ms ease-out;
 }
 
-/* Hover simplifié: fond gris uniquement */
 .ashby-job-posting-brief:hover {
   background: var(--c-secondary-03);
-  box-shadow: inset 0 0 0 1px var(--c-secondary-08);
-  transform: none;
-}
-
-.ashby-job-posting-brief-list {
-  gap: 12px;
 }
 
 /* =========================
-   Détail offre
+   Detail header spacing (tabs)
    ========================= */
 .ashby-job-posting-header {
   border-bottom: 1px solid var(--c-secondary-08);
@@ -179,304 +175,59 @@
 
 .ashby-job-posting-header .ashby-job-posting-heading,
 .ashby-job-posting-header h1 {
-  font-family: var(--fontFamily) !important;
   font-size: 20px !important;
   line-height: 28px !important;
   font-weight: 600 !important;
   margin-top: 0 !important;
-  margin-bottom: 12px !important;
-}
-
-.ashby-job-posting-left-pane,
-.ashby-job-posting-right-pane {
-  font-size: 13px;
-  line-height: 20px;
-  color: var(--c-secondary);
-}
-
-.ashby-job-posting-right-pane-tab-slider {
-  background: var(--colorPrimary600);
+  margin-bottom: 18px !important;
 }
 
 /* =========================
-   Boutons
+   Back button (All Jobs)
    ========================= */
-.ashby-application-form-submit-button,
-.ashby-job-board-back-to-all-jobs-button {
-  border: none;
-  border-radius: var(--radius);
-  font-family: var(--fontFamily);
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 500;
-  padding: 7px 12px;
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out;
-}
-
-.ashby-application-form-submit-button {
-  background: var(--colorPrimary900);
-  color: #fff;
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 2px 4px -2px var(--c-secondary-12);
-}
-
-.ashby-application-form-submit-button:hover {
-  background: var(--colorPrimary900);
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08);
-}
-
-.ashby-application-form-submit-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 0 0 3px rgba(38, 127, 253, 0.2), 0 2px 4px -2px var(--c-secondary-12);
-}
-
-.ashby-job-board-back-to-all-jobs-button {
-  background: #fff;
-  color: var(--c-secondary);
-  box-shadow: var(--shadow-light);
-  margin-bottom: 10px !important;
-}
-
-.ashby-job-board-back-to-all-jobs-button:hover {
-  box-shadow: var(--shadow-light);
-}
-
-.ashby-job-board-back-to-all-jobs-button:focus {
-  outline: none;
-  box-shadow: var(--shadow-focused);
-}
-
-/* =========================
-   Form layout spacing
-   ========================= */
-.ashby-application-form-container {
-  border-top: 1px solid var(--c-secondary-08);
-  padding-top: 16px;
-}
-
-.ashby-application-form-section-container {
-  margin-bottom: 16px;
-}
-
-.ashby-application-form-field-entry {
-  margin-bottom: 12px;
-}
-
-/* =========================
-   Uniformiser labels ("Filters:" + sections)
-   ========================= */
-.ashby-job-board-filters-label,
-.ashby-department-heading,
-.ashby-job-posting-brief-department-heading,
-.ashby-department-heading-level,
-.ashby-job-posting-brief-department-heading-level {
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  line-height: 20px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0 !important;
-  color: rgba(11, 37, 75, 0.5) !important;
-}
-
-/* =========================
-   Mobile
-   ========================= */
-@media (max-width: 900px) {
-  :root {
-    --widthMaxJobBoard: 100%;
-  }
-
-  .ashby-job-board-heading {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .ashby-job-posting-header .ashby-job-posting-heading,
-  .ashby-job-posting-header h1,
-  .ashby-job-posting-brief-title {
-    font-size: 16px !important;
-    line-height: 24px !important;
-  }
-
-  .ashby-job-posting-brief {
-    padding: 12px;
-  }
-}
-
-/* Détail: plus d'espace entre titre et tabs */
-.ashby-job-posting-header .ashby-job-posting-heading,
-.ashby-job-posting-header h1 {
-  margin-bottom: 18px !important; /* teste 16-20 selon préférence */
-}
-
-/* Back button - base */
 .ashby-job-board-back-to-all-jobs-button,
 .ashby-job-board-back-to-all-jobs-button:visited {
-  background: #fffff !important;
-  color: var(--c-secondary-70) !important;
-  border: 1 !important;
-  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+  box-shadow: var(--shadow-light) !important;
   transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
 }
 
-/* Hover/active/focus */
+/* Hover back: fond bleu, MAIS icône reste foncée */
 .ashby-job-board-back-to-all-jobs-button:hover,
 .ashby-job-board-back-to-all-jobs-button:active,
 .ashby-job-board-back-to-all-jobs-button:focus {
-  background: var(--c-secondary-03) !important;
-  color: var(--c-secondary-70) !important;
-  border: 1 !important;
-  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
-}
-
-/* =========================
-   1) Overview: "Apply for this Job" = style submit (primary)
-   ========================= */
-/* On cible tout ce qui ressemble à un bouton "apply" dans l'onglet overview */
-.ashby-job-posting-right-pane-overview-tab [class*="apply"],
-.ashby-job-posting-right-pane-overview-tab button[class*="apply"],
-.ashby-job-posting-right-pane-overview-tab a[class*="apply"] {
-  border: none !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  line-height: 20px !important;
-  font-weight: 500 !important;
-
-  padding: 7px 12px !important;
-
   background: var(--colorPrimary900) !important;
   color: #ffffff !important;
-
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 2px 4px -2px var(--c-secondary-12) !important;
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-job-posting-right-pane-overview-tab [class*="apply"]:hover,
-.ashby-job-posting-right-pane-overview-tab button[class*="apply"]:hover,
-.ashby-job-posting-right-pane-overview-tab a[class*="apply"]:hover {
-  background: var(--colorPrimary900) !important;
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08) !important;
-  color: #ffffff !important;
-}
-
-/* =========================
-   2) Application: "Upload file" = style back all jobs (secondary)
-   ========================= */
-/* On cible boutons/links liés à upload/file dans le form application */
-.ashby-application-form-container [class*="upload"] button,
-.ashby-application-form-container [class*="upload"] a,
-.ashby-application-form-container [class*="file"] button,
-.ashby-application-form-container [class*="file"] a {
-  border: none !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  line-height: 20px !important;
-  font-weight: 500 !important;
-
-  padding: 7px 12px !important;
-
-  background: #ffffff !important;
-  color: var(--c-secondary) !important;
-  box-shadow: var(--shadow-light) !important;
-
-  transition: box-shadow 180ms ease-out, background-color 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-application-form-container [class*="upload"] button:hover,
-.ashby-application-form-container [class*="upload"] a:hover,
-.ashby-application-form-container [class*="file"] button:hover,
-.ashby-application-form-container [class*="file"] a:hover {
-  box-shadow: var(--shadow-medium) !important;
-  background: #ffffff !important;
-  color: var(--c-secondary) !important;
-}
-
-/* =========================================================
-   Unifier "Apply for this Job" (overview) avec "Submit Application" (application)
-   On cible les boutons "primary" dans l'onglet overview
-   ========================================================= */
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary"],
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary"] {
-  background: var(--c-secondary) !important; /* match ton back text color tone */
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  line-height: 20px !important;
-  font-weight: 500 !important;
-
-  padding: 7px 12px !important;
-  box-shadow: 0 0 0 1px var(--c-secondary), 0 2px 4px -2px var(--c-secondary-12) !important;
-
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary"]:hover,
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary"]:hover {
-  background: var(--colorPrimary900) !important;
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08) !important;
-}
-
-
-/* =========================================================
-   Unifier les boutons "Upload file" (application) avec le style du back "All Jobs"
-   On cible les boutons "secondary" dans le form application
-   ========================================================= */
-.ashby-application-form-container button[class*="_secondary"],
-.ashby-application-form-container a[class*="_secondary"] {
-  background: #fff !important;
-  color: var(--c-secondary) !important;
-  border: none !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 13px !important;
-  line-height: 20px !important;
-  font-weight: 500 !important;
-
-  padding: 7px 12px !important;
-  box-shadow: var(--shadow-light) !important;
-
-  transition: box-shadow 180ms ease-out, background-color 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-application-form-container button[class*="_secondary"]:hover,
-.ashby-application-form-container a[class*="_secondary"]:hover {
   box-shadow: var(--shadow-medium) !important;
 }
 
-/* Ne pas faire virer l'icône en blanc au hover */
 .ashby-job-board-back-to-all-jobs-button svg,
 .ashby-job-board-back-to-all-jobs-button svg * {
   fill: var(--c-secondary) !important;
   stroke: var(--c-secondary) !important;
-  color: var(--c-secondary) !important;
 }
 
-.ashby-job-board-back-to-all-jobs-button:hover svg,
-.ashby-job-board-back-to-all-jobs-button:hover svg * {
-  fill: var(--c-secondary) !important;
-  stroke: var(--c-secondary) !important;
-  color: var(--c-secondary) !important;
-}
+/* =========================
+   Buttons alignment (simple + robust)
+   Use Ashby hashed classes: _primary_ / _secondary_
+   ========================= */
 
-/* ==============================
-   1) "Apply for this Job" (overview) = style du bouton submit (application)
-   Cible tous les boutons "primary" dans overview + application
-   ============================== */
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"],
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"],
-.ashby-job-posting-right-pane-application-tab button[class*="_primary_"],
-.ashby-job-posting-right-pane-application-tab a[class*="_primary_"] {
-  background: #0b254b !important; /* même ton que ton back */
+/* Primary buttons: Apply/Submit => navy background */
+.ashby-job-posting-right-pane-overview-tab
+  button[class*="_primary_"],
+.ashby-job-posting-right-pane-overview-tab
+  a[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_primary_"] {
+  background: var(--c-secondary) !important;
   color: #ffffff !important;
   border: 0 !important;
-  border-radius: 10px !important;
+  border-radius: var(--btnRadius) !important;
 
   font-family: var(--fontFamily) !important;
   font-size: 16px !important;
@@ -486,146 +237,61 @@
   padding: 7px 12px !important;
 
   box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
 }
 
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-application-tab a[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:active,
-.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:active {
-  background: #1f69d1 !important;
+.ashby-job-posting-right-pane-overview-tab
+  button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-overview-tab
+  a[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_primary_"]:hover {
+  background: var(--colorPrimary900) !important;
   box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
 }
 
-/* ==============================
-   2) Boutons "Upload file" (application) = style back "All Jobs"
-   Cible tous les boutons "secondary" dans application
-   ============================== */
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-container button[class*="_secondary_"],
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-container a[class*="_secondary_"],
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader button[class*="_secondary_"],
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader a[class*="_secondary_"] {
-  background: #0b254b !important;
-  color: #ffffff !important;
-  border: 0 !important;
-  border-radius: 10px !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  font-weight: 600 !important;
-
-  padding: 7px 12px !important;
-  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
-
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-container button[class*="_secondary_"]:hover,
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-container a[class*="_secondary_"]:hover,
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader button[class*="_secondary_"]:hover,
-.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader a[class*="_secondary_"]:hover {
-  background: #1f69d1 !important;
-  box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
-}
-
-/* Empêche l'icone de passer en blanc au hover (SVG suit currentColor parfois) */
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg,
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg,
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg *,
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg * {
-  fill: #0b254b !important;
-  stroke: #0b254b !important;
-}
-
-/* ================
-   Boutons (simple & robuste)
-   ================ */
-:root{
-  --shadow-medium: 0 0 0 1px var(--c-secondary-08), 0 5px 7px -2px var(--c-secondary-08);
-}
-
-/* A) Overview: "Apply for this Job" => même style que les primary */
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"],
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"],
-.ashby-job-posting-right-pane-application-tab button[class*="_primary_"],
-.ashby-job-posting-right-pane-application-tab a[class*="_primary_"] {
-  background: var(--colorPrimary900) !important;
-  color: #ffffff !important;
-  border: 0 !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  font-weight: 600 !important;
-
-  padding: 7px 12px !important;
-
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 2px 4px -2px var(--c-secondary-12) !important;
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
-}
-
-.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:hover,
-.ashby-job-posting-right-pane-application-tab a[class*="_primary_"]:hover {
-  background: var(--colorPrimary900) !important;
-  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08) !important;
-}
-
-/* B) Application: "Upload file" (resume + autofill) => même style que le back "All Jobs" (secondary) */
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"],
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] {
+/* Secondary buttons: Upload file (resume + autofill) */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"] {
   background: #ffffff !important;
   color: var(--c-secondary) !important;
-
   border: 0 !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--btnRadius) !important;
 
   font-family: var(--fontFamily) !important;
   font-size: 14px !important;
   line-height: 20px !important;
   font-weight: 600 !important;
 
-  padding: 8px 12px !important;
+  padding: 7px 12px !important;
 
   box-shadow: var(--shadow-light) !important;
   transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
 }
 
-/* hover secondaire = léger fond gris + icon reste foncée */
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"]:hover,
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"]:hover {
+/* Hover: fond gris, ET l’icône reste foncée (pas blanche) */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"]:hover {
   background: var(--c-secondary-03) !important;
-  color: var(--c-secondary) !important;
   box-shadow: var(--shadow-medium) !important;
-}
-
-/* Empêche le SVG/icone de passer en blanc */
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg,
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg,
-.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg *,
-.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg * {
-  fill: var(--c-secondary) !important;
-  stroke: var(--c-secondary) !important;
   color: var(--c-secondary) !important;
 }
 
-/* Icon ne doit pas passer en blanc au hover (Upload File / secondary) */
+/* Force icon color for secondary buttons (fix "icon becomes white") */
 .ashby-job-posting-right-pane-application-tab
-  button[class*="_secondary_"]:hover
-{
-  color: var(--c-secondary) !important;
-}
-
-/* Force fill/stroke des SVG au hover */
+  button[class*="_secondary_"] svg,
 .ashby-job-posting-right-pane-application-tab
-  button[class*="_secondary_"]:hover svg,
+  button[class*="_secondary_"] svg *,
 .ashby-job-posting-right-pane-application-tab
-  button[class*="_secondary_"]:hover svg * {
+  a[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab
+  a[class*="_secondary_"] svg * {
   fill: var(--c-secondary) !important;
   stroke: var(--c-secondary) !important;
   color: var(--c-secondary) !important;
