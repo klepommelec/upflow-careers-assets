@@ -393,3 +393,59 @@
   background: #ffffff !important;
   color: var(--c-secondary) !important;
 }
+
+/* =========================================================
+   Unifier "Apply for this Job" (overview) avec "Submit Application" (application)
+   On cible les boutons "primary" dans l'onglet overview
+   ========================================================= */
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary"],
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary"] {
+  background: var(--c-secondary) !important; /* match ton back text color tone */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+
+  padding: 7px 12px !important;
+  box-shadow: 0 0 0 1px var(--c-secondary), 0 2px 4px -2px var(--c-secondary-12) !important;
+
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary"]:hover,
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary"]:hover {
+  background: var(--colorPrimary900) !important;
+  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08) !important;
+}
+
+
+/* =========================================================
+   Unifier les boutons "Upload file" (application) avec le style du back "All Jobs"
+   On cible les boutons "secondary" dans le form application
+   ========================================================= */
+.ashby-application-form-container button[class*="_secondary"],
+.ashby-application-form-container a[class*="_secondary"] {
+  background: #fff !important;
+  color: var(--c-secondary) !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+
+  padding: 7px 12px !important;
+  box-shadow: var(--shadow-light) !important;
+
+  transition: box-shadow 180ms ease-out, background-color 180ms ease-out, color 180ms ease-out !important;
+}
+
+.ashby-application-form-container button[class*="_secondary"]:hover,
+.ashby-application-form-container a[class*="_secondary"]:hover {
+  box-shadow: var(--shadow-medium) !important;
+}
