@@ -491,5 +491,5 @@ a[class*="_primary_"]:focus {
 #root > div._container_ud4nd_29 > div._content_ud4nd_71._details_oj0x8_414 > div.ashby-job-posting-right-pane > nav {
   border-bottom: 1px solid var(--c-secondary-08) !important;
   padding-bottom: 8px !important; /* optionnel: espace entre tabs et trait */
-  margin-bottom: 16px !important; /* optionnel: respiration avant le contenu */
+  margin-bottom: 8px !important; /* optionnel: respiration avant le contenu */
 }
