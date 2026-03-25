@@ -613,3 +613,20 @@
   stroke: var(--c-secondary) !important;
   color: var(--c-secondary) !important;
 }
+
+/* Icon ne doit pas passer en blanc au hover (Upload File / secondary) */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"]:hover
+{
+  color: var(--c-secondary) !important;
+}
+
+/* Force fill/stroke des SVG au hover */
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"]:hover svg,
+.ashby-job-posting-right-pane-application-tab
+  button[class*="_secondary_"]:hover svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
