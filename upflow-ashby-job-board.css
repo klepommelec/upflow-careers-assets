@@ -311,9 +311,9 @@
 /* Back button - base */
 .ashby-job-board-back-to-all-jobs-button,
 .ashby-job-board-back-to-all-jobs-button:visited {
-  background: #0b254b !important;
-  color: #ffffff !important;
-  border: 0 !important;
+  background: #fffff !important;
+  color: var(--c-secondary-70) !important;
+  border: 1 !important;
   box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
   transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
 }
