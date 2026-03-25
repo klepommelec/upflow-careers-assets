@@ -344,3 +344,26 @@ a[class*="_secondary_"] svg *{
   stroke: #0b254b !important;
   color: #0b254b !important;
 }
+
+/* Focus input: border/outline en primary */
+.ashby-application-form-field-entry input:focus,
+.ashby-application-form-field-entry textarea:focus,
+.ashby-application-form-field-entry select:focus {
+  outline: none !important;
+  box-shadow:
+    0 0 0 1px var(--colorPrimary600) !important,
+    0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
+
+/* Onglet sélectionné: texte + underline en primary */
+.ashby-job-posting-right-pane-tab-slider {
+  background: var(--colorPrimary600) !important;
+}
+
+/* Optionnel: texte actif en primary (si état exposé) */
+.ashby-job-posting-right-pane-overview-tab[aria-selected='true'],
+.ashby-job-posting-right-pane-application-tab[aria-selected='true'],
+.ashby-job-posting-right-pane-overview-tab[data-state='active'],
+.ashby-job-posting-right-pane-application-tab[data-state='active'] {
+  color: var(--colorPrimary600) !important;
+}
