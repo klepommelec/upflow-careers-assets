@@ -367,3 +367,21 @@ a[class*="_secondary_"] svg *{
 .ashby-job-posting-right-pane-application-tab[data-state='active'] {
   color: var(--colorPrimary600) !important;
 }
+
+/* Primary buttons background in --colorPrimary600 */
+button[class*="_primary_"],
+a[class*="_primary_"] {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12) !important;
+}
+
+button[class*="_primary_"]:hover,
+a[class*="_primary_"]:hover,
+button[class*="_primary_"]:active,
+a[class*="_primary_"]:active,
+button[class*="_primary_"]:focus,
+a[class*="_primary_"]:focus {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+}
