@@ -138,6 +138,7 @@
 .ashby-application-form-field-entry textarea,
 .ashby-application-form-field-entry select {
   padding: 8px 12px;
+  border-radius: var(--radius);
 }
 
 /* évite le "jump" typo au select */
