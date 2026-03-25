@@ -545,3 +545,19 @@ a[class*="_primary_"]:focus {
 #root > div._container_ud4nd_29 > div._titles_ud4nd_34 > h1 {
   margin-top: 16px !important; /* augmente à 20px si besoin */
 }
+
+/* Focus bleu sur le select Department (selector exact) */
+#root > div._container_ud4nd_29._section_1cp2r_341 > div._content_ud4nd_71 > div._filtersContainer_1cp2r_136 > div._filters_1cp2r_136 > div:nth-child(1) > select:focus,
+#root > div._container_ud4nd_29._section_1cp2r_341 > div._content_ud4nd_71 > div._filtersContainer_1cp2r_136 > div._filters_1cp2r_136 > div:nth-child(1) > select:focus-visible {
+  outline: none !important;
+  border-color: #267ffd !important;
+  box-shadow: 0 0 0 1px #267ffd !important, 0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
+
+/* Même règle pour tous les filtres Ashby (recommandé) */
+.ashby-job-board-filter:focus,
+.ashby-job-board-filter:focus-visible {
+  outline: none !important;
+  border-color: #267ffd !important;
+  box-shadow: 0 0 0 1px #267ffd !important, 0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
