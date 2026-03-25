@@ -1,4 +1,4 @@
-/* upflow-ashby-job-board.css - clean baseline */
+/* upflow-ashby-job-board.css - clean consolidated */
 
 :root {
   --colorPrimary900: #1f69d1;
@@ -10,6 +10,7 @@
 
   --c-secondary: #0b254b;
   --c-secondary-70: rgba(11, 37, 75, 0.7);
+  --c-secondary-50: rgba(11, 37, 75, 0.5);
   --c-secondary-24: rgba(11, 37, 75, 0.24);
   --c-secondary-12: rgba(11, 37, 75, 0.12);
   --c-secondary-08: rgba(11, 37, 75, 0.08);
@@ -21,7 +22,9 @@
   --shadow-focused: 0 0 0 3px var(--c-secondary-06), 0 0 0 1px var(--c-secondary-24), 0 2px 4px -2px var(--c-secondary-12);
 }
 
-/* ---------- Typography ---------- */
+/* =========================
+   Typography
+   ========================= */
 .ashby-job-board-heading,
 .ashby-job-board-heading-count,
 .ashby-job-board-filters-label,
@@ -57,6 +60,7 @@
   color: var(--c-secondary-70);
 }
 
+/* Small/secondary labels */
 .ashby-job-board-filters-label,
 .ashby-job-board-reset-filters-label,
 .ashby-job-posting-brief-details,
@@ -69,11 +73,12 @@
 .ashby-job-posting-right-pane-overview-tab,
 .ashby-job-posting-right-pane-application-tab {
   font-size: 13px;
-  font-weight: 500;
   line-height: 20px;
+  font-weight: 500;
   color: var(--c-secondary-70);
 }
 
+/* Main titles */
 .ashby-job-posting-brief-title,
 .ashby-job-posting-heading,
 .ashby-application-form-question-title,
@@ -83,7 +88,9 @@
   font-weight: 600;
 }
 
-/* ---------- Filters ---------- */
+/* =========================
+   Filters layout + fields
+   ========================= */
 .ashby-job-board-filters {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -95,4 +102,214 @@
   min-width: 0 !important;
 }
 
-@media (max-width:
+@media (max-width: 1024px) {
+  .ashby-job-board-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ashby-job-board-filters {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.ashby-job-board-filter,
+.ashby-application-form-field-entry input,
+.ashby-application-form-field-entry textarea,
+.ashby-application-form-field-entry select {
+  border: 0;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--c-secondary);
+  box-shadow: var(--shadow-light);
+  font-family: var(--fontFamily);
+  line-height: 20px;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.ashby-job-board-filter {
+  height: 34px;
+  padding: 0 12px;
+}
+
+.ashby-application-form-field-entry input,
+.ashby-application-form-field-entry textarea,
+.ashby-application-form-field-entry select {
+  padding: 8px 12px;
+}
+
+/* Avoid filter text jumping */
+.ashby-job-board-filter,
+.ashby-job-board-filter * {
+  font-size: 13px !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
+}
+
+/* Focus in primary color */
+.ashby-application-form-field-entry input:focus,
+.ashby-application-form-field-entry textarea:focus,
+.ashby-application-form-field-entry select:focus {
+  outline: none !important;
+  box-shadow:
+    0 0 0 1px var(--colorPrimary600) !important,
+    0 0 0 3px rgba(38, 127, 253, 0.16) !important;
+}
+
+/* =========================
+   Job cards
+   ========================= */
+.ashby-job-posting-brief {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 8px;
+  box-shadow: inset 0 0 0 1px var(--c-secondary-08);
+  transition: background-color 180ms ease-out;
+}
+
+.ashby-job-posting-brief:hover {
+  background: var(--c-secondary-03);
+}
+
+/* =========================
+   Detail header + tabs
+   ========================= */
+.ashby-job-posting-header {
+  border-bottom: 1px solid var(--c-secondary-08);
+  padding-top: 12px !important;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.ashby-job-posting-header .ashby-job-posting-heading,
+.ashby-job-posting-header h1 {
+  font-size: 24px !important;
+  line-height: 32px !important;
+  font-weight: 600 !important;
+  margin-top: 16px !important;
+  padding-top: 12px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Tabs text default/active */
+#job-overview .ashby-job-posting-right-pane-overview-tab,
+#job-application-form .ashby-job-posting-right-pane-application-tab {
+  color: var(--c-secondary-70) !important;
+}
+
+#job-overview[aria-selected="true"] .ashby-job-posting-right-pane-overview-tab,
+#job-application-form[aria-selected="true"] .ashby-job-posting-right-pane-application-tab {
+  color: var(--colorPrimary600) !important;
+}
+
+/* Active underline */
+.ashby-job-posting-right-pane-tab-slider {
+  background: var(--colorPrimary600) !important;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+/* Back "All Jobs" */
+.ashby-job-board-back-to-all-jobs-button,
+.ashby-job-board-back-to-all-jobs-button:visited {
+  height: 36px;
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+  box-shadow: var(--shadow-light) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out !important;
+}
+
+.ashby-job-board-back-to-all-jobs-button:hover,
+.ashby-job-board-back-to-all-jobs-button:active,
+.ashby-job-board-back-to-all-jobs-button:focus {
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+.ashby-job-board-back-to-all-jobs-button svg,
+.ashby-job-board-back-to-all-jobs-button svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
+
+/* Primary CTA exact selectors you provided */
+#overview > a > button,
+#form > button {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+  border: 0 !important;
+  border-color: var(--colorPrimary600) !important;
+  border-radius: var(--btnRadius) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px var(--colorPrimary600), 0 2px 4px -2px var(--c-secondary-12) !important;
+}
+
+#overview > a > button:hover,
+#overview > a > button:active,
+#overview > a > button:focus,
+#form > button:hover,
+#form > button:active,
+#form > button:focus {
+  background: var(--colorPrimary600) !important;
+  background-color: var(--colorPrimary600) !important;
+  color: #ffffff !important;
+}
+
+/* Upload / secondary buttons */
+button[class*="_secondary_"],
+a[class*="_secondary_"] {
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+  border: 0 !important;
+  border-radius: var(--btnRadius) !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+button[class*="_secondary_"]:hover,
+a[class*="_secondary_"]:hover {
+  background: var(--c-secondary-03) !important;
+  color: var(--c-secondary) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+/* Keep icon dark on secondary hover */
+button[class*="_secondary_"] svg,
+button[class*="_secondary_"] svg *,
+a[class*="_secondary_"] svg,
+a[class*="_secondary_"] svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
+
+/* =========================
+   Autofill pane (single gray layer)
+   ========================= */
+
+/* Outer wrapper gets the gray background */
+.ashby-application-form-autofill-pane {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+  padding: 12px !important;
+}
+
+/* All inner layers transparent to avoid "double gray" */
+.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-root,
+.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer,
+.ashby-application-form-autofill-pane .ashby-application-form-autofill-input-base-layer > div,
+.ashby-application-form-autofill-pane [class*="_content_"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
