@@ -535,3 +535,13 @@ a[class*="_primary_"]:focus {
     0 0 0 1px #267ffd !important,
     0 0 0 3px rgba(38, 127, 253, 0.16) !important;
 }
+
+.ashby-job-board-filter:focus,
+.ashby-job-board-filter:focus-visible {
+  border-color: #267ffd !important;
+  border: 0 !important;
+}
+
+#root > div._container_ud4nd_29 > div._titles_ud4nd_34 > h1 {
+  margin-top: 16px !important; /* augmente à 20px si besoin */
+}
