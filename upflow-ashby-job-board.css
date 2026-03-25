@@ -492,3 +492,18 @@ a[class*="_primary_"]:focus {
   border: none !important;
   box-shadow: none !important;
 }
+
+/* Autofill: supprimer le double fond */
+#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div > div._base_xd2v0_31.ashby-application-form-autofill-input-base-layer {
+  background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius) !important;
+}
+
+/* couche interne qui créait le 2e fond */
+#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div > div._base_xd2v0_31.ashby-application-form-autofill-input-base-layer > div._content_xd2v0_36 {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
