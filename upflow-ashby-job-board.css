@@ -300,55 +300,45 @@
   color: var(--c-secondary) !important;
 }
 
-/* ===== Primary buttons (Apply / Submit) ===== */
-#ashby_embed button[class*="_primary_"],
-#ashby_embed a[class*="_primary_"] {
-  background-color: var(--c-secondary) !important;
+/* PRIMARY buttons (Apply/Submit) */
+button[class*="_primary_"],
+a[class*="_primary_"]{
+  background-color: #0b254b !important;
+  background: #0b254b !important;
   color: #ffffff !important;
   border: 0 !important;
+  box-shadow: 0 0 0 1px rgba(11,37,75,0.2), 0 2px 4px -2px rgba(11,37,75,0.25) !important;
   border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  font-weight: 600 !important;
-
-  box-shadow: 0 0 0 1px rgba(11,37,75,0.25) !important;
+}
+button[class*="_primary_"]:hover,
+a[class*="_primary_"]:hover{
+  background-color: #1f69d1 !important;
+  background: #1f69d1 !important;
 }
 
-#ashby_embed button[class*="_primary_"]:hover,
-#ashby_embed a[class*="_primary_"]:hover {
-  background-color: var(--colorPrimary900) !important;
-}
-
-/* ===== Secondary buttons (Upload file / autofill) ===== */
-#ashby_embed button[class*="_secondary_"],
-#ashby_embed a[class*="_secondary_"] {
+/* SECONDARY buttons (Upload file) */
+button[class*="_secondary_"],
+a[class*="_secondary_"]{
+  background-color: #ffffff !important;
   background: #ffffff !important;
-  color: var(--c-secondary) !important;
+  color: #0b254b !important; /* important pour garder l’icone foncée */
   border: 0 !important;
-  border-radius: var(--radius) !important;
-
-  font-family: var(--fontFamily) !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  font-weight: 600 !important;
-
   box-shadow: var(--shadow-light) !important;
+  border-radius: var(--radius) !important;
+}
+button[class*="_secondary_"]:hover,
+a[class*="_secondary_"]:hover{
+  background-color: rgba(11,37,75,0.03) !important; /* fond gris discret */
+  background: rgba(11,37,75,0.03) !important;
+  color: #0b254b !important; /* force l’icone à rester foncée */
 }
 
-#ashby_embed button[class*="_secondary_"]:hover,
-#ashby_embed a[class*="_secondary_"]:hover {
-  background: var(--c-secondary-03) !important;
-  color: var(--c-secondary) !important;
-}
-
-/* Force l'icon à rester foncée au hover (fix "icon becomes white") */
-#ashby_embed button[class*="_secondary_"]:hover svg,
-#ashby_embed button[class*="_secondary_"]:hover svg *,
-#ashby_embed a[class*="_secondary_"]:hover svg,
-#ashby_embed a[class*="_secondary_"]:hover svg * {
-  fill: var(--c-secondary) !important;
-  stroke: var(--c-secondary) !important;
-  color: var(--c-secondary) !important;
+/* Force couleur SVG (fix "icon becomes white") */
+button[class*="_secondary_"] svg,
+a[class*="_secondary_"] svg,
+button[class*="_secondary_"] svg *,
+a[class*="_secondary_"] svg *{
+  fill: #0b254b !important;
+  stroke: #0b254b !important;
+  color: #0b254b !important;
 }
