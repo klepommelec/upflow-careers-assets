@@ -539,3 +539,77 @@
   fill: #0b254b !important;
   stroke: #0b254b !important;
 }
+
+/* ================
+   Boutons (simple & robuste)
+   ================ */
+:root{
+  --shadow-medium: 0 0 0 1px var(--c-secondary-08), 0 5px 7px -2px var(--c-secondary-08);
+}
+
+/* A) Overview: "Apply for this Job" => même style que les primary */
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"],
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab button[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab a[class*="_primary_"] {
+  background: var(--colorPrimary900) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 7px 12px !important;
+
+  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 2px 4px -2px var(--c-secondary-12) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab a[class*="_primary_"]:hover {
+  background: var(--colorPrimary900) !important;
+  box-shadow: 0 0 0 1px var(--colorPrimary900), 0 5px 7px -2px var(--c-secondary-08) !important;
+}
+
+/* B) Application: "Upload file" (resume + autofill) => même style que le back "All Jobs" (secondary) */
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] {
+  background: #ffffff !important;
+  color: var(--c-secondary) !important;
+
+  border: 0 !important;
+  border-radius: var(--radius) !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 8px 12px !important;
+
+  box-shadow: var(--shadow-light) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+/* hover secondaire = léger fond gris + icon reste foncée */
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"]:hover {
+  background: var(--c-secondary-03) !important;
+  color: var(--c-secondary) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+/* Empêche le SVG/icone de passer en blanc */
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg *,
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg * {
+  fill: var(--c-secondary) !important;
+  stroke: var(--c-secondary) !important;
+  color: var(--c-secondary) !important;
+}
