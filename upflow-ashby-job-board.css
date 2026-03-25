@@ -497,3 +497,15 @@ a[class*="_primary_"]:focus {
   margin-top: 24px !important;   /* ajuste 20-28px selon rendu */
   padding-top: 0 !important;     /* évite d'empiler margin + padding */
 }
+
+/* Espace entre "All Jobs" et le bloc titre */
+#root > div._container_ud4nd_29 > div._titles_ud4nd_34 {
+  margin-top: 14px !important;   /* ajuste 12-20px */
+  padding-top: 0 !important;
+}
+
+/* Et on garde une petite marge interne du h1 */
+#root > div._container_ud4nd_29 > div._titles_ud4nd_34 > h1 {
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+}
