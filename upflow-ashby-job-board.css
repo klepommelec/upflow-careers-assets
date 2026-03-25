@@ -464,3 +464,78 @@
   stroke: var(--c-secondary) !important;
   color: var(--c-secondary) !important;
 }
+
+/* ==============================
+   1) "Apply for this Job" (overview) = style du bouton submit (application)
+   Cible tous les boutons "primary" dans overview + application
+   ============================== */
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"],
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab button[class*="_primary_"],
+.ashby-job-posting-right-pane-application-tab a[class*="_primary_"] {
+  background: #0b254b !important; /* même ton que ton back */
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 7px 12px !important;
+
+  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-overview-tab a[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-application-tab a[class*="_primary_"]:hover,
+.ashby-job-posting-right-pane-overview-tab button[class*="_primary_"]:active,
+.ashby-job-posting-right-pane-application-tab button[class*="_primary_"]:active {
+  background: #1f69d1 !important;
+  box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
+}
+
+/* ==============================
+   2) Boutons "Upload file" (application) = style back "All Jobs"
+   Cible tous les boutons "secondary" dans application
+   ============================== */
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-container button[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-container a[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader button[class*="_secondary_"],
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader a[class*="_secondary_"] {
+  background: #0b254b !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  font-family: var(--fontFamily) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+
+  padding: 7px 12px !important;
+  box-shadow: 0 0 0 1px rgba(11, 37, 75, 0.2), 0 2px 4px -2px rgba(11, 37, 75, 0.25) !important;
+
+  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, color 180ms ease-out !important;
+}
+
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-container button[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-container a[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader button[class*="_secondary_"]:hover,
+.ashby-job-posting-right-pane-application-tab .ashby-application-form-autofill-uploader a[class*="_secondary_"]:hover {
+  background: #1f69d1 !important;
+  box-shadow: 0 0 0 1px rgba(31, 105, 209, 0.35), 0 5px 7px -2px rgba(11, 37, 75, 0.18) !important;
+}
+
+/* Empêche l'icone de passer en blanc au hover (SVG suit currentColor parfois) */
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg,
+.ashby-job-posting-right-pane-application-tab button[class*="_secondary_"] svg *,
+.ashby-job-posting-right-pane-application-tab a[class*="_secondary_"] svg * {
+  fill: #0b254b !important;
+  stroke: #0b254b !important;
+}
