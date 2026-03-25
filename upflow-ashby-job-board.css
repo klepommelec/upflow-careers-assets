@@ -471,12 +471,24 @@ a[class*="_primary_"]:focus {
   background: #267ffd !important;
 }
 
-/* Autofill pane: retirer la bordure grise, fond gris clair */
-#form > div._autofillPane_oj0x8_445.ashby-application-form-autofill-pane._container_101oc_29 > div,
-.ashby-application-form-autofill-input-root,
-.ashby-application-form-autofill-input-base-layer {
+/* Autofill: une seule couche de fond gris */
+.ashby-application-form-autofill-pane {
+  background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+/* couche visible unique */
+.ashby-application-form-autofill-input-base-layer {
   background: var(--c-secondary-03) !important;
+  border: none !important;
+  box-shadow: none !important;
   border-radius: var(--radius) !important;
+}
+
+/* neutraliser les wrappers internes */
+.ashby-application-form-autofill-input-root {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
